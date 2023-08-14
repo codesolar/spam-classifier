@@ -1,0 +1,58 @@
+﻿Spam Ham classifier 
+Souradipta Choudhuri
+ROLL = CS22M084
+
+
+
+
+
+
+Here In this we need to classify spam and non spam email . 
+The dataset is enron dataset .= “http://nlp.cs.aueb.gr/software_and_datasets/Enron-Spam/index.html”
+
+
+Simple Procedure :
+Let p be the probability of choosing ham or spam email and param_0 is the probability of each word present in the ham dataset and in the dictionary .
+Let param_1 be the probability of each word present in the spam and in the dictionary .
+1. We are creating a common dictionary which contains all unique words of both spam and non spam mail.
+2. For each ham or non spam email clean the text and for each word in it check if it the word is present in it
+3. If the word is present in the dictionary, count the word . the count will be in param_0 or param_1 depending on whether it is a ham or spam data .
+4. Now normalize param_0 and param_1
+5. Then run the training dataset and check the accuracy in it, here training means all the ham and spam files used in the training. Accuracy initially came out to be 28 percent but after taking less number of words in the dictionary the accuracy increased .
+6. Now run the model on the test data . the model will clean the text and using the pre computed parameters it will predict whether each mail is spam or ham .
+
+
+
+
+
+
+Observance :
+1)The data is text data so it can be cleaned. I have cleaned stopwords and also punctuations from it .After that I have made a vector of words from it . Then I have used this on the model to get the result . It shows the predictions of the data .
+
+
+
+
+2)I have used naive bayes algorithm in it . it uses bernoulli classifier in this . The more the data is cleaned the better will be the accuracy .
+
+
+3)Here I have used naive bayes as the data is containing 0s and 1s .
+
+
+4)Here sentence is not a sequence of words but they are seen as a collection of words . It means emotion behind the words are not important in this case . only the count of the words are taken to classify if they are actually predicting correct things are not .
+
+
+
+
+The formula that I have used here is = *pspam 
+Here fk denotes if x_test is 1 in that position.
+Pspam is the probability of the spam words .
+
+
+
+
+
+
+Scope of improvements :
+Here if data could be cleaned more then it run in a better way .
+One another thing is taking less words in the dictionary .
+So that the speed is improved .
